@@ -18,7 +18,7 @@ app.use(cors({
 app.use(bodyParser.json());
 
 // Database Setup
-const db = new sqlite3.Database(':memory:'); // Use ':memory:' for in-memory DB, or 'database.db' for file-based DB
+const db = new sqlite3.Database('./user.db'); // Use ':memory:' for in-memory DB, or 'database.db' for file-based DB
 
 db.serialize(() => {
     db.run(`
@@ -99,8 +99,12 @@ app.post('/login', (req, res) => {
 });
 
 app.get('/', (req, res)=>{
-    res.send("this is get request")
-} )
+    try{
+        res.send("this is get request")
+    }catch(e){
+        console.log(e.message)
+    }
+})
 
 // Start the server
 app.listen(port, () => {
