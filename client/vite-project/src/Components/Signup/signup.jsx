@@ -76,7 +76,7 @@ function SignupForm() {
         </div>
         {warning && <Link to='/login' > <p className="warning-text">{warning}</p></Link>}
         <button type="submit"   className="signup-button" onClick={handleSubmit} >Signup</button>
-        <Link to='/login' > <p className="signup-text">Have an account? please Login</p></Link>
+        <Link to='/login' > <p className="signup-text">Have an account? Please Login</p></Link>
       </form>
     </div>
   );

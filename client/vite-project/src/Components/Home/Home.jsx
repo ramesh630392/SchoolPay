@@ -12,7 +12,7 @@ const Home = () =>{
 
     useEffect(()=>{
 
-        if(jwt === undefined){
+        if(jwt === null){
             navigate('/login');
         }
 
