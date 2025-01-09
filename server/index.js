@@ -7,7 +7,7 @@ const cors = require('cors');
 
 
 const app = express();
-const port = 3001;
+const port = 9000;
 
 app.use(cors({
     origin: 'http://localhost:5173', 
@@ -18,8 +18,7 @@ app.use(cors({
 app.use(bodyParser.json());
 
 // Database Setup
-const db = new sqlite3.Database('./user.db'); // Use ':memory:' for in-memory DB, or 'database.db' for file-based DB
-
+const db = new sqlite3.Database(':memory:'); 
 db.serialize(() => {
     db.run(`
         CREATE TABLE IF NOT EXISTS users (

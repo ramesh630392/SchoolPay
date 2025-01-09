@@ -31,7 +31,7 @@ function SignupForm() {
       body: JSON.stringify(body),
     };
     console.log('Handle submit');
-    const response = await fetch('http://localhost:3001/signup', options);
+    const response = await fetch('http://localhost:9000/signup', options);
     console.log(response);
     if (response.ok){
       const data = await response.json()
@@ -75,7 +75,8 @@ function SignupForm() {
           />
         </div>
         {warning && <Link to='/login' > <p className="warning-text">{warning}</p></Link>}
-        <button type="submit"   className="signup-button" onClick={handleSubmit} >Login</button>
+        <button type="submit"   className="signup-button" onClick={handleSubmit} >Signup</button>
+        <Link to='/login' > <p className="signup-text">Have an account? please Login</p></Link>
       </form>
     </div>
   );

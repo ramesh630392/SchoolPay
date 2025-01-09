@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, Link} from 'react-router-dom'
 import './Login.css';
 
 const LoginForm = () => {
@@ -28,7 +28,7 @@ const LoginForm = () => {
         body: JSON.stringify(body),
       };
       console.log('Handle submit');
-      const response = await fetch('http://localhost:3001/login', options);
+      const response = await fetch('http://localhost:9000/login', options);
       console.log(response);
       if (response.ok){
         const data = await response.json()
@@ -69,7 +69,9 @@ const LoginForm = () => {
           <input type="password" id="password" onChange={onChangePassword} name="password" placeholder="Enter your password" required />
         </div>
         <button type="submit"   className="login-button" onClick={handleSubmit} >Login</button>
+        <Link to = '/signup' ><p className='signup-text' >Don't have an account? Signup</p></Link>
       </form>
+    
     </div>
   );
 };
