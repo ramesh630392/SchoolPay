@@ -12,12 +12,13 @@
   "description": "",
   "dependencies": {
     "@vercel/node": "^4.0.0",
+    "@vercel/speed-insights": "^1.1.0",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "nodemon": "^3.1.9",
     "sqlite3": "^5.1.7",
-    "vercel": "^28.18.5"
+    "vercel": "^32.3.0"
   }
 }
